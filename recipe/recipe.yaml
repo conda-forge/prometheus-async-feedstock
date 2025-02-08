@@ -1,14 +1,14 @@
 context:
   name: prometheus-async
-  version: 22.2.0
+  version: "25.1.0"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/prometheus-async-${{ version }}.tar.gz
-  sha256: b0426370eb3b3bacd99afcf1fcc669c118cb67603cc951a6fe12434e9d4307f2
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
+  sha256: 968e29b5255af57bc8146ade132e7aa0a21fe2b4d95ffefc7c732e9c3fbbb1dd
 
 build:
   number: 0
@@ -27,11 +27,11 @@ requirements:
     - wrapt
 
 tests:
-   - python:
-       imports:
-       - prometheus_async
-       pip_check: true
-       python_version: ${{ python_min }}.*
+  - python:
+      imports:
+        - prometheus_async
+      pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
   summary: Async helpers for prometheus_client.
