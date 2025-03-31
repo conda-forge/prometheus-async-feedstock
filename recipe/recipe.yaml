@@ -1,14 +1,14 @@
 context:
   name: prometheus-async
-  version: 22.2.0
+  version: 25.1.0
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/prometheus-async-${{ version }}.tar.gz
-  sha256: b0426370eb3b3bacd99afcf1fcc669c118cb67603cc951a6fe12434e9d4307f2
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/prometheus_async-${{ version }}.tar.gz
+  sha256: 968e29b5255af57bc8146ade132e7aa0a21fe2b4d95ffefc7c732e9c3fbbb1dd
 
 build:
   number: 0
@@ -17,8 +17,9 @@ build:
 
 requirements:
   host:
-    - python ==${{ python_min }}
-    - flit-core >=3.4,<4
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs
     - pip
   run:
     - python >=${{ python_min }}
