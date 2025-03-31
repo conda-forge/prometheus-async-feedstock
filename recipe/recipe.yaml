@@ -7,7 +7,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/prometheus-async-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/prometheus_async-${{ version }}.tar.gz
   sha256: 968e29b5255af57bc8146ade132e7aa0a21fe2b4d95ffefc7c732e9c3fbbb1dd
 
 build:
